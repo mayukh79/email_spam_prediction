@@ -6,7 +6,8 @@ import pandas as pd
 
 def main():
     html_temp = """<h1>Email Spam Prediction</h1>"""
-    model = joblib.load("email_spam_linear_model.joblib")
+    BASE_DIR = Path(__file__).parent
+    model = joblib.load(BASE_DIR / "email_spam_linear_model.joblib")
     st.markdown(html_temp, unsafe_allow_html=True)
     st.markdown("This website helps you predict whether an email is spam or not.")
 
